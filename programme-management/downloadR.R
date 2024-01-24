@@ -14,6 +14,9 @@
     .inst <- packages %in% installed.packages()
     message(paste0(.inst, collapse = " "), 
             " packages still need to be installed.")
+    if (length(.inst) == 0) {
+	message("None of the specified packages need to be installed.")
+    }
     return(.inst)
 }
 
